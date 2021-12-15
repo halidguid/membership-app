@@ -49,7 +49,7 @@ const update = (req, res, next) => {
 
   user.save((err) => {
     if (err) {
-      return res.status(400).json({ error: errorHandler.getErrorMessage() });
+      return res.status(400).json({ error: errorHandler.getErrorMessage(err) });
     }
     res.status(200).json(user);
   });
